@@ -8,19 +8,11 @@ var app = express();
 
 board.on('ready', function() {
     console.log('Board Ready');
-
     var leds = apiLeds.init(five);
-
-    // var ledStatus = true;
+    ledHelper.flashAll(leds.allLeds);
 
     app.get('/', function(req, res){
-        // if (ledStatus){
-        //     leds.ledRed.off();
-        //     ledStatus = false;
-        // } else {
-        //     leds.ledRed.on();
-        //     ledStatus = true;
-        // }
+
         ledHelper.flash(leds.ledRed);
 
         res.send('Hello World!');
