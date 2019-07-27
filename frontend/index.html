@@ -33,9 +33,6 @@
     
     
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
     <script
   src="https://code.jquery.com/jquery-3.4.1.min.js"
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
@@ -45,27 +42,9 @@
 
     <script type="text/javascript">
       $(document).ready(function () {
-        // $( "#add" ).click(function() {
-        //   alert( "Handler for ADD called." );
-        // });
-
-        // $( "#remove" ).click(function() {
-        //   alert( "Handler for REMOVE called." );
-        // });
-
-        // $(function () {
-        //   $('#add').on('click', function () {
-        //       var Status = $(this).val();
-        //       $.ajax({
-        //           url: 'http://localhost/api/add'
-        //       });
-        //   });
-        // });
-
-
         $(document).ready(function(){
           $("#add").click(function(){
-            $.post("http://localhost/api/add", function(){
+            $.post("http://localhost:3000/api/add", function(){
               console.log('added');
             });
           });
@@ -73,7 +52,7 @@
 
         $(document).ready(function(){
           $("#remove").click(function(){
-            $.post("http://localhost/api/remove", function(){
+            $.post("http://localhost:3000/api/remove", function(){
               console.log('removed');
             });
           });
