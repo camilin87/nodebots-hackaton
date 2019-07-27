@@ -8,18 +8,12 @@ module.exports = {
         }, 500)
     },
     flashAll: function(leds){
-        for (var i = leds.length - 1; i >= 0; i--) {
-            this.flash(leds[i]);
-        }
+        leds.forEach(l => this.flash(l));
     },
     allOn: function(leds){
-        for (var i = leds.length - 1; i >= 0; i--) {
-            leds[i].on();
-        }
+        leds.forEach(l => l.on());
     },
     allOff: function(leds){
-        for (var i = leds.length - 1; i >= 0; i--) {
-            leds[i].off();
-        }
+        leds.forEach(l => l.off());
     }
 }
