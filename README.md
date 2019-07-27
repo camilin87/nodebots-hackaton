@@ -9,9 +9,20 @@ npm i
 npm start
 ```
 
-## Running the frontend  
+## Running the frontend separately  
 
 ```bash
 cd frontend
 http-server
 ```
+
+## Exposing to the world  
+
+```bash
+ssh -R 80:localhost:3000 nodecounter@ssh.localhost.run
+```
+
+## Public Url  
+
+https://nodecounter.localhost.run
+
