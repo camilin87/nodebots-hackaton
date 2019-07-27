@@ -71,6 +71,14 @@
           });
         });
 
+        $(document).ready(function(){
+          $("#remove").click(function(){
+            $.post("http://localhost/api/remove", function(){
+              console.log('removed');
+            });
+          });
+        });
+
       });   
     </script>
   </body>
