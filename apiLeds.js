@@ -14,6 +14,9 @@ module.exports = {
             green: green,
             blue: blue,
             bigRed: bigRed,
+            statusLeds: [
+                red, yellow, green
+            ],
             all: [
                 red, yellow, green, blue, bigRed
             ]
