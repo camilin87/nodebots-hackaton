@@ -17,14 +17,14 @@ module.exports = function(){
         },
         currentColor: function(){
             if (status.count < status.greenEnd){
-                return 'GREEN';
+                return 'green';
             }
 
             if (status.count < status.yellowEnd){
-                return 'YELLOW';
+                return 'yellow';
             }
 
-            return 'RED';
+            return 'red';
         },
         increment: function(){
             status.count += 1;
