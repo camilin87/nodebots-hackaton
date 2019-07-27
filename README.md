@@ -2,7 +2,7 @@
 
 Simple people counter for events.  
 
-[Nodebots Day Counter Video](https://www.youtube.com/watch?v=n3qfNKKpsBc)  
+[![NodeBots Day Counter Video](https://img.youtube.com/vi/n3qfNKKpsBc/0.jpg)](https://www.youtube.com/watch?v=n3qfNKKpsBc)  
 
 ![NodeBots Day Counter](img/nodebots-day-counter.png)
 
