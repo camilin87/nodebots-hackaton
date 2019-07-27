@@ -1,6 +1,9 @@
 {
   "name": "nodebots-hackaton",
   "version": "1.0.0",
+  "scripts": {
+    "start": "node api.js"
+  },
   "dependencies": {
     "etherport-client": "^0.1.4",
     "express": "^4.17.1",
