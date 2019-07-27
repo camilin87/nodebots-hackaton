@@ -1,6 +1,8 @@
 # nodebots-hackaton
 
-Simple counter for events.
+Simple people counter for events.  
+
+![NodeBots Day Counter](img/nodebots-day-counter.png)
 
 ## Running the server  
 
