@@ -13,8 +13,19 @@ board.on('ready', function() {
     ledHelper.flashAll(leds.all);
 
     status.init(10);
-    var currentColor = status.currentColor();
-    leds[currentColor].on();
+
+    function displayCurrentStatus(){
+        var currentCount = status.currentCount();
+        var currentColor = status.currentColor();
+        ledHelper.allOff(leds.statusLeds);
+        leds[currentColor].on();
+
+        console.log(`Increment; count: ${currentCount}; color: ${currentColor}`);
+    }
+    displayCurrentStatus();
+    setTimeout(function(){
+        displayCurrentStatus();
+    }, 600);
 
     app.get('/', function(req, res){
         ledHelper.flash(leds.red);
@@ -23,25 +34,21 @@ board.on('ready', function() {
     });
 
     app.post('/api/add', function(req, res){
+        console.log('Increment');
         ledHelper.flash(leds.blue);
 
         var currentCount = status.increment();
-        var currentColor = status.currentColor();
-        console.log(`Increment; count: ${currentCount}; color: ${currentColor}`);
-        ledHelper.allOff(leds.statusLeds);
-        leds[currentColor].on();
+        displayCurrentStatus();
 
         res.status(200).send(`${currentCount}`);
     });
 
     app.post('/api/remove', function(req, res){
+        console.log('Decrement');
         ledHelper.flash(leds.bigRed);
 
         var currentCount = status.decrement();
-        var currentColor = status.currentColor();
-        console.log(`Decrement; count: ${currentCount}; color: ${currentColor}`);
-        ledHelper.allOff(leds.statusLeds);
-        leds[currentColor].on();
+        displayCurrentStatus();
 
         res.status(200).send(`${currentCount}`);
     });
