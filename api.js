@@ -1,5 +1,6 @@
 var five = require('johnny-five');
 var apiLeds = require('./apiLeds');
+var ledHelper = require('./ledHelper');
 var board = new five.Board();
 
 var express = require('express');
@@ -10,16 +11,17 @@ board.on('ready', function() {
 
     var leds = apiLeds.init(five);
 
-    var ledStatus = true;
+    // var ledStatus = true;
 
     app.get('/', function(req, res){
-        if (ledStatus){
-            leds.ledRed.off();
-            ledStatus = false;
-        } else {
-            leds.ledRed.on();
-            ledStatus = true;
-        }
+        // if (ledStatus){
+        //     leds.ledRed.off();
+        //     ledStatus = false;
+        // } else {
+        //     leds.ledRed.on();
+        //     ledStatus = true;
+        // }
+        ledHelper.flash(leds.ledRed);
 
         res.send('Hello World!');
     });
