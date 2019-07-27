@@ -14,7 +14,7 @@ board.on('ready', function() {
 
     status.init(10);
 
-    function displayCurrentStatus(){
+    function displayStatus(status){
         var currentCount = status.currentCount();
         var currentColor = status.currentColor();
         ledHelper.allOff(leds.statusLeds);
@@ -22,9 +22,9 @@ board.on('ready', function() {
 
         console.log(`Increment; count: ${currentCount}; color: ${currentColor}`);
     }
-    displayCurrentStatus();
+    displayStatus(status);
     setTimeout(function(){
-        displayCurrentStatus();
+        displayStatus(status);
     }, 600);
 
     app.use(express.static('frontend'));
@@ -34,7 +34,7 @@ board.on('ready', function() {
         ledHelper.flash(leds.blue);
 
         var currentCount = status.increment();
-        displayCurrentStatus();
+        displayStatus(status);
 
         res.status(200).send(`${currentCount}`);
     });
@@ -44,7 +44,7 @@ board.on('ready', function() {
         ledHelper.flash(leds.bigRed);
 
         var currentCount = status.decrement();
-        displayCurrentStatus();
+        displayStatus(status);
 
         res.status(200).send(`${currentCount}`);
     });
