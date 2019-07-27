@@ -26,6 +26,8 @@ board.on('ready', function() {
         var currentCount = status.increment();
         var currentColor = status.currentColor();
         console.log(`Increment; count: ${currentCount}; color: ${currentColor}`);
+        ledHelper.allOff(leds.all);
+        leds[currentColor].on();
 
         res.status(200).send(`${currentCount}`);
     });
@@ -36,6 +38,8 @@ board.on('ready', function() {
         var currentCount = status.decrement();
         var currentColor = status.currentColor();
         console.log(`Decrement; count: ${currentCount}; color: ${currentColor}`);
+        ledHelper.allOff(leds.all);
+        leds[currentColor].on();
 
         res.status(200).send(`${currentCount}`);
     });
