@@ -30,3 +30,6 @@ ssh -R 80:localhost:3000 nodecounter@ssh.localhost.run
 
 https://nodecounter.localhost.run
 
+## Public URL slides
+
+https://docs.google.com/presentation/d/1KqoH1Z-VmT3IwdA5q7Qh5sIv_oFW799YYy-Fd2l6fy8/edit?usp=sharing
