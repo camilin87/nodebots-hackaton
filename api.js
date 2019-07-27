@@ -12,10 +12,27 @@ board.on('ready', function() {
     ledHelper.flashAll(leds.all);
 
     app.get('/', function(req, res){
-
         ledHelper.flash(leds.red);
 
         res.send('Hello World!');
+    });
+
+    app.post('/api/add', function(req, res){
+        ledHelper.flash(leds.blue);
+
+        //TODO increment counter
+        //TODO update status
+
+        res.send('');
+    });
+
+    app.post('/api/remove', function(req, res){
+        ledHelper.flash(leds.bigRed);
+
+        //TODO decrement counter
+        //TODO update status
+
+        res.send('');
     });
 
     app.listen(3000, function(){
