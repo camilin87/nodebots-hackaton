@@ -8,10 +8,15 @@ board.on("ready", function() {
     var ledRed = new five.Led(pins.d3);
     var ledWhite = new five.Led(pins.d2);
     var ledGreen = new five.Led(pins.d4);
+    var ledBlue = new five.Led(pins.d1);
+
+    
 
     ledRed.blink(500);
     ledWhite.blink(700);
     ledGreen.blink(1000);
+
+    ledBlue.blink(2000);
 
     console.log("IT'S BLINKING!!!");
 });
