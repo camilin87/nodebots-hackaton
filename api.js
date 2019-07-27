@@ -9,11 +9,11 @@ var app = express();
 board.on('ready', function() {
     console.log('Board Ready');
     var leds = apiLeds.init(five);
-    ledHelper.flashAll(leds.allLeds);
+    ledHelper.flashAll(leds.all);
 
     app.get('/', function(req, res){
 
-        ledHelper.flash(leds.ledRed);
+        ledHelper.flash(leds.red);
 
         res.send('Hello World!');
     });

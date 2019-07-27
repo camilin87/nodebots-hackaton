@@ -2,20 +2,20 @@ var pins = require("./esp8266Pins");
 
 module.exports = {
     init: function(five){
-        var ledRed = new five.Led(pins.d3);
-        var ledWhite = new five.Led(pins.d2);
-        var ledGreen = new five.Led(pins.d4);
-        var ledBlue = new five.Led(pins.d1);
-        var ledBigRed = new five.Led(pins.d7);
+        var red = new five.Led(pins.d3);
+        var white = new five.Led(pins.d2);
+        var green = new five.Led(pins.d4);
+        var blue = new five.Led(pins.d1);
+        var bigRed = new five.Led(pins.d7);
 
         return {
-            ledRed: ledRed,
-            ledWhite: ledWhite,
-            ledGreen: ledGreen,
-            ledBlue: ledBlue,
-            ledBigRed: ledBigRed,
-            allLeds: [
-                ledRed, ledWhite, ledGreen, ledBlue, ledBigRed
+            red: red,
+            white: white,
+            green: green,
+            blue: blue,
+            bigRed: bigRed,
+            all: [
+                red, white, green, blue, bigRed
             ]
         };
     }
