@@ -42,7 +42,7 @@
       $(document).ready(function () {
         $(document).ready(function(){
           $("#add").click(function(){
-            $.post("http://localhost:3000/api/add", function(){
+            $.post("/api/add", function(){
               console.log('added');
             });
           });
@@ -50,7 +50,7 @@
 
         $(document).ready(function(){
           $("#remove").click(function(){
-            $.post("http://localhost:3000/api/remove", function(){
+            $.post("/api/remove", function(){
               console.log('removed');
             });
           });
