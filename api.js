@@ -24,7 +24,8 @@ board.on('ready', function() {
         ledHelper.flash(leds.blue);
 
         var currentCount = status.increment();
-        //TODO update status
+        var currentColor = status.currentColor();
+        console.log(`Increment; count: ${currentCount}; color: ${currentColor}`);
 
         res.status(200).send(`${currentCount}`);
     });
@@ -33,7 +34,8 @@ board.on('ready', function() {
         ledHelper.flash(leds.bigRed);
 
         var currentCount = status.decrement();
-        //TODO update status
+        var currentColor = status.currentColor();
+        console.log(`Decrement; count: ${currentCount}; color: ${currentColor}`);
 
         res.status(200).send(`${currentCount}`);
     });
