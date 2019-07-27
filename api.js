@@ -1,6 +1,7 @@
 var five = require('johnny-five');
 var apiLeds = require('./apiLeds');
 var ledHelper = require('./ledHelper');
+var status = require('./statusHelper')();
 var board = new five.Board();
 
 var express = require('express');
@@ -11,6 +12,8 @@ board.on('ready', function() {
     var leds = apiLeds.init(five);
     ledHelper.flashAll(leds.all);
 
+    status.init(10);
+
     app.get('/', function(req, res){
         ledHelper.flash(leds.red);
 
@@ -20,19 +23,19 @@ board.on('ready', function() {
     app.post('/api/add', function(req, res){
         ledHelper.flash(leds.blue);
 
-        //TODO increment counter
+        var currentCount = status.increment();
         //TODO update status
 
-        res.send('');
+        res.status(200).send(`${currentCount}`);
     });
 
     app.post('/api/remove', function(req, res){
         ledHelper.flash(leds.bigRed);
 
-        //TODO decrement counter
+        var currentCount = status.decrement();
         //TODO update status
 
-        res.send('');
+        res.status(200).send(`${currentCount}`);
     });
 
     app.listen(3000, function(){
