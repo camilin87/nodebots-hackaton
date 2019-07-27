@@ -1,3 +1,5 @@
+// POC to start understanding how to manage the led statuses
+
 var five = require("johnny-five");
 var pins = require("./esp8266Pins");
 var board = new five.Board();
