@@ -2,6 +2,8 @@
 
 Simple people counter for events.  
 
+[Nodebots Day Counter Video](https://www.youtube.com/watch?v=n3qfNKKpsBc)  
+
 ![NodeBots Day Counter](img/nodebots-day-counter.png)
 
 ## Running the server  
