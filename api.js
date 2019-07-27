@@ -27,11 +27,7 @@ board.on('ready', function() {
         displayCurrentStatus();
     }, 600);
 
-    app.get('/', function(req, res){
-        ledHelper.flash(leds.red);
-
-        res.send('Hello World!');
-    });
+    app.use(express.static('frontend'));
 
     app.post('/api/add', function(req, res){
         console.log('Increment');
