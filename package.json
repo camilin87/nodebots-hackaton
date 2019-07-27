@@ -1,0 +1,8 @@
+{
+  "name": "nodebots-hackaton",
+  "version": "1.0.0",
+  "dependencies": {
+    "etherport-client": "^0.1.4",
+    "johnny-five": "^1.2.0"
+  }
+}
